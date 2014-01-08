@@ -1,0 +1,197 @@
+@import 'util/normalize_custom';
+@import 'util/colors';
+@import 'util/ci';
+@import 'compass/css3';
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  @include box-sizing( border-box );
+}
+
+body {
+  background: image-url( 'bg.jpg' ) no-repeat 50% 50%;
+  background-size: cover;
+
+  margin: 0;
+
+  font-family: 'Open Sans', sans-serif;
+
+  color: #fff;
+
+  min-width: 800px;
+}
+
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+.body-header {
+  background: fade-out( #000, .75 );
+  padding: 1rem;
+
+  > h1 {
+    float: left;
+  }
+
+  > form {
+    float: right;
+
+    margin: -1rem;
+    background: fade-out( #000, .5 );
+
+    input {
+      border: 0;
+      background: 0;
+      padding: 1rem 0 1rem 1rem;
+      font-size: 1rem;
+      float: left;
+    }
+
+    button {
+      border: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      background: none;
+      float: left;
+      min-width: 3.4rem;
+      cursor: pointer;
+    }
+  }
+
+  min-height: 1em;
+  overflow: hidden;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.content {
+  float: right;
+  width: 80%;
+
+  padding: 2rem;
+}
+
+aside {
+  float: left;
+  width: 20%;
+  background: fade-out( #000, .5 );
+  min-height: 10rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    background: #000;
+
+    padding: 2rem;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  li > a {
+    display: block;
+    color: $silver;
+  }
+
+  > ul > li > a {
+    padding: 1rem;
+
+    border-right: .5rem solid transparent;
+    @include transition( border-color .3s );
+
+    font-size: 1rem;
+
+    &:hover {
+      border-right-color: $orange;
+      background: fade-out( #000, .8 );
+    }
+
+    .fa {
+      width: 1.5rem;
+    }
+  }
+
+  ul ul {
+    background: fade-out( #000, .7 );
+    display: none;
+
+    font-size: .8rem;
+
+    a {
+      padding: .35rem .5rem .35rem 1.5rem;
+
+      &:hover {
+        background: fade-out( #000, .8 );
+      }
+    }
+  }
+
+  .active {
+    > ul {
+      display: block;
+    }
+
+    > a {
+      border-right-color: $blue;
+    }
+  }
+}
+
+main {
+}
+
+.filters {
+  font-weight: 300;
+
+  margin: 0;
+
+  dt,
+  dd {
+    display: inline-block;
+  }
+
+  dd {
+    margin-left: .5em;
+
+    + dd {
+      &:before {
+        content: '∙';
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
+.main-header {
+  > h1 {
+    margin-bottom: 0;
+  }
+}
